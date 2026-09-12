@@ -18,7 +18,9 @@ function Home() {
   return (
     <section id="home" className="section home">
       <h1>⚔️ 6SSB Mini RPG</h1>
+
       <p>Build your team. Enter the battle.</p>
+
       <button>PLAY</button>
     </section>
   )
@@ -28,7 +30,10 @@ function About() {
   return (
     <section id="about" className="section about">
       <h1>About Me</h1>
-      <p>Welcome to my Mini RPG project.</p>
+
+      <p>
+        Welcome to my Mini RPG project.
+      </p>
 
       <div className="profile-links">
         <a href="#" target="_blank">GitHub</a>
@@ -58,6 +63,7 @@ function Footer() {
   return (
     <footer className="footer">
       <p>Made by 6SSB</p>
+      <p>This website is still under construction.</p>
     </footer>
   )
 }
