@@ -64,6 +64,7 @@ function Footer() {
     <footer className="footer">
       <p>Made by 6SSB</p>
       <p>This website is still under construction.</p>
+      <p>stay checked!</p>
     </footer>
   )
 }
