@@ -156,7 +156,79 @@ body {
   font-size: 48px;
 }
 
-.profile-links,
+.about-content {
+  width: min(900px, 90%);
+  margin-top: 20px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 25px 30px;
+
+  border-left: 3px solid #00aaff;
+  border-radius: 0 15px 15px 0;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  box-shadow:
+    0 0 30px rgba(0, 170, 255, 0.08);
+}
+
+.about-text p {
+  margin: 0;
+
+  color: #c5c9d3;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.profile-links {
+  display: flex;
+
+  justify-content: center;
+  gap: 20px;
+
+  margin-top: 30px;
+}
+
+.profile-links a {
+  min-width: 150px;
+
+  padding: 15px 25px;
+
+  color: white;
+  text-decoration: none;
+  text-align: center;
+
+  border: 1px solid #263449;
+  border-radius: 10px;
+
+  background: rgba(0, 170, 255, 0.04);
+
+  transition: 0.3s;
+}
+
+.profile-links a:hover {
+  transform: translateY(-5px);
+
+  border-color: #00aaff;
+
+  box-shadow:
+    0 0 15px rgba(0, 170, 255, 0.3),
+    0 0 35px rgba(255, 23, 68, 0.1);
+
+  background: rgba(0, 170, 255, 0.08);
+}
+
+/* CONTACT */
+
+.contact {
+  background: #080b12;
+}
+
 .contact-links {
   display: flex;
 
@@ -168,7 +240,6 @@ body {
   margin-top: 30px;
 }
 
-.profile-links a,
 .contact-links a {
   padding: 12px 22px;
 
@@ -181,7 +252,6 @@ body {
   transition: 0.3s;
 }
 
-.profile-links a:hover,
 .contact-links a:hover {
   transform: translateY(-4px);
 
@@ -189,12 +259,6 @@ body {
 
   box-shadow:
     0 0 15px rgba(0, 170, 255, 0.3);
-}
-
-/* CONTACT */
-
-.contact {
-  background: #080b12;
 }
 
 /* FOOTER */

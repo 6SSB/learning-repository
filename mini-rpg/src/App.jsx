@@ -31,14 +31,22 @@ function About() {
     <section id="about" className="section about">
       <h1>About Me</h1>
 
-      <p>
-        Welcome to my Mini RPG project.
-      </p>
+      <div className="about-content">
+        <div className="about-text">
+          <p>Hi, I'm Mohammed Sabith, a young developer who goes by the nickname 6SSB.</p>
+          <p>I’m passionate about programming, web development, AI, and technology, and I enjoy turning my ideas into real projects.</p>
+          <p>Right now, I’m learning React, JavaScript, Python, Django, and AI engineering while building projects like this Mini RPG.</p>
+          <p>My goal is to keep improving my skills, build useful and creative software, and become a professional developer.</p>
+        </div>
 
-      <div className="profile-links">
-        <a href="#" target="_blank">GitHub</a>
-        <a href="#" target="_blank">Monkeytype</a>
-        <a href="#" target="_blank">Other Profile</a>
+        <div className="profile-links">
+          <a href="https://github.com/6SSB" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://monkeytype.com/profile/-6SSB" target="_blank" rel="noopener noreferrer"> 
+            Monkeytype
+          </a>
+        </div>
       </div>
     </section>
   )
@@ -50,10 +58,14 @@ function Contact() {
       <h1>Contact Me</h1>
 
       <div className="contact-links">
-        <a href="#">Instagram</a>
-        <a href="#">Discord</a>
-        <a href="mailto:example@gmail.com">Gmail</a>
-        <a href="mailto:example@outlook.com">Outlook</a>
+        <a href="https://www.instagram.com/__.sa.bii.th_7/"  target="_blank"  rel="noopener noreferrer" >
+          Instagram
+        </a> 
+        <a href="https://discord.gg/AbCd1234" target="_blank"  rel="noopener noreferrer" >
+          Discord
+        </a>
+        <a href="mailto:iam6ssb@gmail.com">Gmail</a>
+        <a href="mailto:iam6ssb123@outlook.com">Outlook</a>
       </div>
     </section>
   )
