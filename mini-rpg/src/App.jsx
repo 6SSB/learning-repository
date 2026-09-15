@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 
 function Navbar() {
@@ -74,8 +75,61 @@ function Contact() {
 function Footer() {
   return (
     <footer className="footer">
-      <p>Made by 6SSB</p>
-      <p>This website is still under construction.</p>
+
+      <div className="footer-top">
+
+        <div className="footer-brand">
+          <h2>⚔️ 6SSB Mini RPG</h2>
+          <p>A turn-based RPG built with React.</p>
+        </div>
+
+        <div className="footer-column">
+          <h3>GAME</h3>
+          <a href="#home">Play</a>
+          <a href="#home">About the Game</a>
+          <a href="#home">Updates</a>
+        </div>
+
+        <div className="footer-column">
+          <h3>DEVELOPER</h3>
+          <a href="https://github.com/6SSB" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://monkeytype.com/profile/-6SSB" target="_blank" rel="noopener noreferrer">
+            Monkeytype
+          </a>
+          <a href="#about">About 6SSB</a>
+        </div>
+
+        <div className="footer-column">
+          <h3>COMMUNITY</h3>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            Discord
+          </a>
+          <a
+            href="https://www.instagram.com/__.sa.bii.th_7/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+        </div>
+
+        <div className="footer-column">
+          <h3>LEGAL</h3>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Licenses & Credits</a>
+        </div>
+
+      </div>
+
+      <div className="footer-bottom">
+        <p>Made with ⚔️ by 6SSB</p>
+        <p>© 2026 6SSB. All rights reserved.</p>
+        <p>This website is still under construction.</p>
+      </div>
+
     </footer>
   )
 }

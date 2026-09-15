@@ -264,20 +264,141 @@ body {
 /* FOOTER */
 
 .footer {
-  height: 50vh;
+  min-height: 50vh;
+
+  padding: 70px 60px 30px;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
-  align-items: center;
-  justify-content: center;
-
-  background: #05070c;
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(0, 150, 255, 0.08),
+      transparent 45%
+    ),
+    #05070c;
 
   border-top: 1px solid rgba(0, 200, 255, 0.2);
 }
 
-.footer p {
-  font-size: 18px;
+.footer-top {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 2fr repeat(4, 1fr);
+
+  gap: 50px;
+}
+
+.footer-brand h2 {
+  margin: 0 0 12px;
+
+  font-size: 24px;
+
+  background: linear-gradient(90deg, #00aaff, #ff1744);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-brand p {
+  margin: 0;
+
+  color: #777;
+
+  line-height: 1.6;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.footer-column h3 {
+  margin: 0 0 8px;
+
+  color: #00aaff;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.footer-column a {
   color: #888;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.footer-column a:hover {
+  color: white;
+
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  width: min(1200px, 100%);
+  margin: 60px auto 0;
+
+  padding-top: 25px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .footer {
+    padding: 60px 30px 25px;
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 40px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
 }
