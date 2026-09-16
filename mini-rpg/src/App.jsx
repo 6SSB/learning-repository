@@ -15,14 +15,12 @@ function Navbar() {
   )
 }
 
-function Home() {
+function Home({ onPlay }) {
   return (
     <section id="home" className="section home">
       <h1>⚔️ 6SSB Mini RPG</h1>
-
       <p>Build your team. Enter the battle.</p>
-
-      <button>PLAY</button>
+      <button onClick={onPlay}>PLAY</button>
     </section>
   )
 }
@@ -134,16 +132,54 @@ function Footer() {
   )
 }
 
-function App() {
+function GameSetup() {
   return (
-    <div>
-      <Navbar />
-      <Home />
-      <About />
-      <Contact />
-      <Footer />
-    </div>
+    <section className="game-setup">
+      <div className="setup-container">
+        <h1>GAME SETUP</h1>
+        <p>Build your team and prepare for battle.</p>
+
+        <div className="setup-content">
+          <div className="setup-box">
+            <h2>PLAYERS</h2>
+            <p>Choose how many players will join the battle.</p>
+          </div>
+
+          <div className="setup-box">
+            <h2>BOTS</h2>
+            <p>Choose how many bots will join the battle.</p>
+          </div>
+        </div>
+
+        <button className="start-battle">START BATTLE</button>
+      </div>
+    </section>
   )
+}
+
+function App() {
+  const [gameStarted, setGameStarted] = useState(false)
+  const [players, setPlayers] = useState(1)
+  const [bots, setBots] = useState(1)
+
+  if (gameStarted === false) {
+    return (
+      <div>
+        <Navbar />
+        <Home onPlay={() => setGameStarted(true)} />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <Navbar />
+        <GameSetup />
+      </div>
+    )
+  }
 }
 
 export default App
