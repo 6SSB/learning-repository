@@ -136,22 +136,118 @@ function GameSetup() {
   return (
     <section className="game-setup">
       <div className="setup-container">
-        <h1>GAME SETUP</h1>
-        <p>Build your team and prepare for battle.</p>
 
-        <div className="setup-content">
-          <div className="setup-box">
-            <h2>PLAYERS</h2>
-            <p>Choose how many players will join the battle.</p>
-          </div>
-
-          <div className="setup-box">
-            <h2>BOTS</h2>
-            <p>Choose how many bots will join the battle.</p>
-          </div>
+        <div className="setup-header">
+          <h1>GAME SETUP</h1>
+          <p>CUSTOMIZE YOUR TEAM AND PREPARE FOR BATTLE</p>
         </div>
 
-        <button className="start-battle">START BATTLE</button>
+        <div className="teams">
+
+          <div className="team-panel players-panel">
+            <div className="team-header">
+              <h2>PLAYERS</h2>
+
+              <div className="team-counter">
+                <button>−</button>
+                <span>6</span>
+                <button>+</button>
+              </div>
+            </div>
+
+            <div className="character-list">
+              <div className="character">
+                <span className="number">1</span>
+                <span className="character-name">ShadowRider</span>
+                <button className="edit-name">✎</button>
+              </div>
+
+              <div className="character">
+                <span className="number">2</span>
+                <span className="character-name">NovaStrike</span>
+                <button className="edit-name">✎</button>
+              </div>
+
+              <div className="character">
+                <span className="number">3</span>
+                <span className="character-name">Zenith</span>
+                <button className="edit-name">✎</button>
+              </div>
+
+              <div className="character">
+                <span className="number">4</span>
+                <span className="character-name">FrostByte</span>
+                <button className="edit-name">✎</button>
+              </div>
+
+              <div className="character">
+                <span className="number">5</span>
+                <span className="character-name">CrimsonWolf</span>
+                <button className="edit-name">✎</button>
+              </div>
+
+              <div className="character">
+                <span className="number">6</span>
+                <span className="character-name">StormBreaker</span>
+                <button className="edit-name">✎</button>
+              </div>
+            </div>
+          </div>
+
+          <div className="team-panel bots-panel">
+            <div className="team-header">
+              <h2>BOTS</h2>
+
+              <div className="team-counter">
+                <button>−</button>
+                <span>6</span>
+                <button>+</button>
+              </div>
+            </div>
+
+            <div className="character-list">
+              <div className="character">
+                <span className="number">1</span>
+                <span className="character-name">TitanBot</span>
+                <button className="edit-name">✎</button>
+              </div>
+
+              <div className="character">
+                <span className="number">2</span>
+                <span className="character-name">RogueBot</span>
+                <button className="edit-name">✎</button>
+              </div>
+
+              <div className="character">
+                <span className="number">3</span>
+                <span className="character-name">ViperBot</span>
+                <button className="edit-name">✎</button>
+              </div>
+
+              <div className="character">
+                <span className="number">4</span>
+                <span className="character-name">GhostBot</span>
+                <button className="edit-name">✎</button>
+              </div>
+
+              <div className="character">
+                <span className="number">5</span>
+                <span className="character-name">IronBot</span>
+                <button className="edit-name">✎</button>
+              </div>
+
+              <div className="character">
+                <span className="number">6</span>
+                <span className="character-name">ShadowBot</span>
+                <button className="edit-name">✎</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button className="start-battle">⚔ START BATTLE</button>
+
       </div>
     </section>
   )
@@ -159,8 +255,25 @@ function GameSetup() {
 
 function App() {
   const [gameStarted, setGameStarted] = useState(false)
-  const [players, setPlayers] = useState(1)
-  const [bots, setBots] = useState(1)
+  const [players, setPlayers] = useState([
+  {
+    id: crypto.randomUUID(),
+    name: "Player 1",
+    type: "player",
+    hp: 100,
+    maxHp: 100
+  }
+])
+
+const [bots, setBots] = useState([
+  {
+    id: crypto.randomUUID(),
+    name: "Bot 1",
+    type: "bot",
+    hp: 100,
+    maxHp: 100
+  }
+])
 
   if (gameStarted === false) {
     return (
