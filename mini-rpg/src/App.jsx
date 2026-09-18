@@ -32,10 +32,25 @@ function About() {
 
       <div className="about-content">
         <div className="about-text">
-          <p>Hi, I'm Mohammed Sabith, a young developer who goes by the nickname 6SSB.</p>
-          <p>I’m passionate about programming, web development, AI, and technology, and I enjoy turning my ideas into real projects.</p>
-          <p>Right now, I’m learning React, JavaScript, Python, Django, and AI engineering while building projects like this Mini RPG.</p>
-          <p>My goal is to keep improving my skills, build useful and creative software, and become a professional developer.</p>
+          <p>
+            Hi, I'm Mohammed Sabith, a young developer who goes by the nickname
+            6SSB.
+          </p>
+
+          <p>
+            I’m passionate about programming, web development, AI, and
+            technology, and I enjoy turning my ideas into real projects.
+          </p>
+
+          <p>
+            Right now, I’m learning React, JavaScript, Python, Django, and AI
+            engineering while building projects like this Mini RPG.
+          </p>
+
+          <p>
+            My goal is to keep improving my skills, build useful and creative
+            software, and become a professional developer.
+          </p>
         </div>
 
         <div className="profile-links">
@@ -62,7 +77,7 @@ function About() {
 
 function Contact() {
   return (
-    <section id="contact" className="section contact">
+    <section className="section contact">
       <h1>Contact Me</h1>
 
       <div className="contact-links">
@@ -74,11 +89,7 @@ function Contact() {
           Instagram
         </a>
 
-        <a
-          href="https://discord.gg/AbCd1234"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="#" target="_blank" rel="noopener noreferrer">
           Discord
         </a>
 
@@ -93,7 +104,6 @@ function Contact() {
 function Footer() {
   return (
     <footer className="footer">
-
       <div className="footer-top">
 
         <div className="footer-brand">
@@ -160,12 +170,18 @@ function Footer() {
         <p>© 2026 6SSB. All rights reserved.</p>
         <p>This website is still under construction.</p>
       </div>
-
     </footer>
   )
 }
 
-function GameSetup({ players, addPlayer, removePlayer, bots, addBot, removeBot }) {
+function GameSetup({
+  players,
+  addPlayer,
+  removePlayer,
+  bots,
+  addBot,
+  removeBot
+}) {
   return (
     <section className="game-setup">
       <div className="setup-container">
@@ -177,6 +193,8 @@ function GameSetup({ players, addPlayer, removePlayer, bots, addBot, removeBot }
 
         <div className="teams">
 
+          {/* PLAYERS */}
+
           <div className="team-panel players-panel">
 
             <div className="team-header">
@@ -184,21 +202,39 @@ function GameSetup({ players, addPlayer, removePlayer, bots, addBot, removeBot }
 
               <div className="team-counter">
                 <button onClick={removePlayer}>−</button>
+
                 <span>{players.length}</span>
+
                 <button onClick={addPlayer}>+</button>
               </div>
             </div>
 
             <div className="character-list">
 
-              <div className="character">
-                <span className="number">1</span>
-                <span className="character-name">Player 1</span>
-                <button className="edit-name">✎</button>
-              </div>
+              {players.map((player) => (
+                <div className="character" key={player.id}>
+
+                  <span className="number">
+                    {players.indexOf(player) + 1}
+                  </span>
+
+                  <span className="character-name">
+                    {player.name}
+                  </span>
+
+                  <button className="edit-name">
+                    ✎
+                  </button>
+
+                </div>
+              ))}
 
             </div>
+
           </div>
+
+
+          {/* BOTS */}
 
           <div className="team-panel bots-panel">
 
@@ -207,25 +243,42 @@ function GameSetup({ players, addPlayer, removePlayer, bots, addBot, removeBot }
 
               <div className="team-counter">
                 <button onClick={removeBot}>−</button>
+
                 <span>{bots.length}</span>
+
                 <button onClick={addBot}>+</button>
               </div>
             </div>
 
             <div className="character-list">
 
-              <div className="character">
-                <span className="number">1</span>
-                <span className="character-name">Bot 1</span>
-                <button className="edit-name">✎</button>
-              </div>
+              {bots.map((bot) => (
+                <div className="character" key={bot.id}>
+
+                  <span className="number">
+                    {bots.indexOf(bot) + 1}
+                  </span>
+
+                  <span className="character-name">
+                    {bot.name}
+                  </span>
+
+                  <button className="edit-name">
+                    ✎
+                  </button>
+
+                </div>
+              ))}
 
             </div>
+
           </div>
 
         </div>
 
-        <button className="start-battle">⚔ START BATTLE</button>
+        <button className="start-battle">
+          ⚔ START BATTLE
+        </button>
 
       </div>
     </section>
@@ -256,7 +309,9 @@ function App() {
     }
   ])
 
+
   function addPlayer() {
+
     if (players.length >= 6) return
 
     const newPlayer = {
@@ -270,13 +325,17 @@ function App() {
     setPlayers([...players, newPlayer])
   }
 
+
   function removePlayer() {
+
     if (players.length <= 1) return
 
     setPlayers(players.slice(0, -1))
   }
 
+
   function addBot() {
+
     if (bots.length >= 6) return
 
     const newBot = {
@@ -290,25 +349,38 @@ function App() {
     setBots([...bots, newBot])
   }
 
+
   function removeBot() {
+
     if (bots.length <= 1) return
 
     setBots(bots.slice(0, -1))
   }
 
+
   if (gameStarted === false) {
+
     return (
       <div>
         <Navbar />
-        <Home onPlay={() => setGameStarted(true)} />
+
+        <Home
+          onPlay={() => setGameStarted(true)}
+        />
+
         <About />
+
         <Contact />
+
         <Footer />
       </div>
     )
+
   } else {
+
     return (
       <div>
+
         <Navbar />
 
         <GameSetup
