@@ -39,10 +39,19 @@ function About() {
         </div>
 
         <div className="profile-links">
-          <a href="https://github.com/6SSB" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/6SSB"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
           </a>
-          <a href="https://monkeytype.com/profile/-6SSB" target="_blank" rel="noopener noreferrer"> 
+
+          <a
+            href="https://monkeytype.com/profile/-6SSB"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Monkeytype
           </a>
         </div>
@@ -57,13 +66,24 @@ function Contact() {
       <h1>Contact Me</h1>
 
       <div className="contact-links">
-        <a href="https://www.instagram.com/__.sa.bii.th_7/"  target="_blank"  rel="noopener noreferrer" >
+        <a
+          href="https://www.instagram.com/__.sa.bii.th_7/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Instagram
-        </a> 
-        <a href="https://discord.gg/AbCd1234" target="_blank"  rel="noopener noreferrer" >
+        </a>
+
+        <a
+          href="https://discord.gg/AbCd1234"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Discord
         </a>
+
         <a href="mailto:iam6ssb@gmail.com">Gmail</a>
+
         <a href="mailto:iam6ssb123@outlook.com">Outlook</a>
       </div>
     </section>
@@ -90,20 +110,33 @@ function Footer() {
 
         <div className="footer-column">
           <h3>DEVELOPER</h3>
-          <a href="https://github.com/6SSB" target="_blank" rel="noopener noreferrer">
+
+          <a
+            href="https://github.com/6SSB"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
           </a>
-          <a href="https://monkeytype.com/profile/-6SSB" target="_blank" rel="noopener noreferrer">
+
+          <a
+            href="https://monkeytype.com/profile/-6SSB"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Monkeytype
           </a>
+
           <a href="#about">About 6SSB</a>
         </div>
 
         <div className="footer-column">
           <h3>COMMUNITY</h3>
+
           <a href="#" target="_blank" rel="noopener noreferrer">
             Discord
           </a>
+
           <a
             href="https://www.instagram.com/__.sa.bii.th_7/"
             target="_blank"
@@ -132,7 +165,7 @@ function Footer() {
   )
 }
 
-function GameSetup() {
+function GameSetup({ players, addPlayer, removePlayer, bots, addBot, removeBot }) {
   return (
     <section className="game-setup">
       <div className="setup-container">
@@ -145,102 +178,48 @@ function GameSetup() {
         <div className="teams">
 
           <div className="team-panel players-panel">
+
             <div className="team-header">
               <h2>PLAYERS</h2>
 
               <div className="team-counter">
-                <button>−</button>
-                <span>6</span>
-                <button>+</button>
+                <button onClick={removePlayer}>−</button>
+                <span>{players.length}</span>
+                <button onClick={addPlayer}>+</button>
               </div>
             </div>
 
             <div className="character-list">
+
               <div className="character">
                 <span className="number">1</span>
-                <span className="character-name">ShadowRider</span>
+                <span className="character-name">Player 1</span>
                 <button className="edit-name">✎</button>
               </div>
 
-              <div className="character">
-                <span className="number">2</span>
-                <span className="character-name">NovaStrike</span>
-                <button className="edit-name">✎</button>
-              </div>
-
-              <div className="character">
-                <span className="number">3</span>
-                <span className="character-name">Zenith</span>
-                <button className="edit-name">✎</button>
-              </div>
-
-              <div className="character">
-                <span className="number">4</span>
-                <span className="character-name">FrostByte</span>
-                <button className="edit-name">✎</button>
-              </div>
-
-              <div className="character">
-                <span className="number">5</span>
-                <span className="character-name">CrimsonWolf</span>
-                <button className="edit-name">✎</button>
-              </div>
-
-              <div className="character">
-                <span className="number">6</span>
-                <span className="character-name">StormBreaker</span>
-                <button className="edit-name">✎</button>
-              </div>
             </div>
           </div>
 
           <div className="team-panel bots-panel">
+
             <div className="team-header">
               <h2>BOTS</h2>
 
               <div className="team-counter">
-                <button>−</button>
-                <span>6</span>
-                <button>+</button>
+                <button onClick={removeBot}>−</button>
+                <span>{bots.length}</span>
+                <button onClick={addBot}>+</button>
               </div>
             </div>
 
             <div className="character-list">
+
               <div className="character">
                 <span className="number">1</span>
-                <span className="character-name">TitanBot</span>
+                <span className="character-name">Bot 1</span>
                 <button className="edit-name">✎</button>
               </div>
 
-              <div className="character">
-                <span className="number">2</span>
-                <span className="character-name">RogueBot</span>
-                <button className="edit-name">✎</button>
-              </div>
-
-              <div className="character">
-                <span className="number">3</span>
-                <span className="character-name">ViperBot</span>
-                <button className="edit-name">✎</button>
-              </div>
-
-              <div className="character">
-                <span className="number">4</span>
-                <span className="character-name">GhostBot</span>
-                <button className="edit-name">✎</button>
-              </div>
-
-              <div className="character">
-                <span className="number">5</span>
-                <span className="character-name">IronBot</span>
-                <button className="edit-name">✎</button>
-              </div>
-
-              <div className="character">
-                <span className="number">6</span>
-                <span className="character-name">ShadowBot</span>
-                <button className="edit-name">✎</button>
-              </div>
             </div>
           </div>
 
@@ -254,26 +233,68 @@ function GameSetup() {
 }
 
 function App() {
-  const [gameStarted, setGameStarted] = useState(false)
-  const [players, setPlayers] = useState([
-  {
-    id: crypto.randomUUID(),
-    name: "Player 1",
-    type: "player",
-    hp: 100,
-    maxHp: 100
-  }
-])
 
-const [bots, setBots] = useState([
-  {
-    id: crypto.randomUUID(),
-    name: "Bot 1",
-    type: "bot",
-    hp: 100,
-    maxHp: 100
+  const [gameStarted, setGameStarted] = useState(false)
+
+  const [players, setPlayers] = useState([
+    {
+      id: crypto.randomUUID(),
+      name: "Player 1",
+      type: "player",
+      hp: 100,
+      maxHp: 100
+    }
+  ])
+
+  const [bots, setBots] = useState([
+    {
+      id: crypto.randomUUID(),
+      name: "Bot 1",
+      type: "bot",
+      hp: 100,
+      maxHp: 100
+    }
+  ])
+
+  function addPlayer() {
+    if (players.length >= 6) return
+
+    const newPlayer = {
+      id: crypto.randomUUID(),
+      name: `Player ${players.length + 1}`,
+      type: "player",
+      hp: 100,
+      maxHp: 100
+    }
+
+    setPlayers([...players, newPlayer])
   }
-])
+
+  function removePlayer() {
+    if (players.length <= 1) return
+
+    setPlayers(players.slice(0, -1))
+  }
+
+  function addBot() {
+    if (bots.length >= 6) return
+
+    const newBot = {
+      id: crypto.randomUUID(),
+      name: `Bot ${bots.length + 1}`,
+      type: "bot",
+      hp: 100,
+      maxHp: 100
+    }
+
+    setBots([...bots, newBot])
+  }
+
+  function removeBot() {
+    if (bots.length <= 1) return
+
+    setBots(bots.slice(0, -1))
+  }
 
   if (gameStarted === false) {
     return (
@@ -289,7 +310,16 @@ const [bots, setBots] = useState([
     return (
       <div>
         <Navbar />
-        <GameSetup />
+
+        <GameSetup
+          players={players}
+          addPlayer={addPlayer}
+          removePlayer={removePlayer}
+          bots={bots}
+          addBot={addBot}
+          removeBot={removeBot}
+        />
+
       </div>
     )
   }

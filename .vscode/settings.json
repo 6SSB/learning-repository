@@ -12,7 +12,7 @@
         "Cache/": false,
         "Cache/**": false
     },
-    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.colorTheme": "Visual Studio Dark",
     "editor.semanticTokenColorCustomizations": {
         "rules": {
             "*.deprecated": {
