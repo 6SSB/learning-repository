@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-6)yizlx^n2spp$at9mj53u9xlh#^_tj11osvz_3eiys!ys4bqh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "mini-rpg-backend-3z5z.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
