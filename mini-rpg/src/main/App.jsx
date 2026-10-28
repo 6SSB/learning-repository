@@ -9,18 +9,29 @@ function App() {
   const [screen, setScreen] = useState('home')
 
   useEffect(() => {
-    async function checkBackend() {
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/status/`
-        )
+    
+  async function checkBackend() {
+    try {
+      const url = `${import.meta.env.VITE_API_URL}/api/status/`
+      console.log('Requesting backend:', url)
 
-        const data = await response.json()
-        console.log('Django backend:', data)
-      } catch (error) {
-        console.error('Backend connection failed:', error)
+      const response = await fetch(url)
+      const body = await response.text()
+
+      console.log('HTTP status:', response.status)
+      console.log('Response body:', body)
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`)
       }
+
+      const data = JSON.parse(body)
+      console.log('Django backend connected:', data)
+    } catch (error) {
+      console.error('Backend connection failed:', error)
     }
+  }
+
 
     checkBackend()
   }, [])
