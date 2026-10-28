@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6)yizlx^n2spp$at9mj53u9xlh#^_tj11osvz_3eiys!ys4bqh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "mini-rpg-backend-3z5z.onrender.com",
